@@ -1,0 +1,92 @@
+/* ============================================================
+   LIGHT LUXURY — COMPOSANT SLIDER / CARROUSEL
+   ------------------------------------------------------------
+   Composant réutilisable pour toutes les sections affichant
+   plusieurs photos. Ne modifie pas le style des cartes/photos
+   elles-mêmes (gallery-item, service-card, product-card...),
+   uniquement leur mode d'affichage (carrousel au lieu de grille).
+   ============================================================ */
+
+.slider {
+  position: relative;
+}
+
+.slider-viewport {
+  overflow: hidden;
+  touch-action: pan-y;
+  border-radius: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.slider-viewport::-webkit-scrollbar { display: none; }
+
+.slider-track {
+  display: flex;
+  will-change: transform;
+  cursor: grab;
+  user-select: none;
+}
+.slider-track.is-dragging { cursor: grabbing; }
+
+.slider-slide {
+  flex: 0 0 auto;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+}
+.slider-slide > * { height: 100%; }
+.slider-slide img { pointer-events: none; }
+
+/* Flèches de navigation */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(9, 10, 13, 0.72);
+  border: 1px solid var(--c-border-strong);
+  color: var(--c-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  z-index: 5;
+  transition: border-color var(--transition-base), color var(--transition-base), background var(--transition-base);
+  backdrop-filter: blur(6px);
+}
+.slider-arrow:hover {
+  border-color: var(--c-blue-bright);
+  color: var(--c-blue-bright);
+  background: rgba(9, 10, 13, 0.9);
+}
+.slider-arrow.slider-prev { left: -4px; }
+.slider-arrow.slider-next { right: -4px; }
+
+/* Points de navigation */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: var(--space-md);
+}
+.slider-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c-border-strong);
+  transition: background var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+}
+.slider-dots button.is-active {
+  background: var(--c-blue-bright);
+  box-shadow: 0 0 10px var(--c-glow-blue);
+  transform: scale(1.2);
+}
+.slider-dots button:hover { background: var(--c-blue-bright); }
+
+@media (max-width: 768px) {
+  .slider-arrow { width: 38px; height: 38px; font-size: 1.1rem; }
+  .slider-arrow.slider-prev { left: 2px; }
+  .slider-arrow.slider-next { right: 2px; }
+}

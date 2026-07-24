@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Panier — Demande de devis — Light Luxury</title>
+<meta name="description" content="Votre panier de demande de devis Light Luxury. Préparez votre message WhatsApp avec les prestations choisies." />
+<link rel="canonical" href="https://www.lightluxury.ch/panier.html" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Panier — Demande de devis — Light Luxury" />
+<meta property="og:description" content="Votre panier de demande de devis Light Luxury. Préparez votre message WhatsApp avec les prestations choisies." />
+<meta property="og:image" content="assets/images/logo/light-luxury-logo.jpg" />
+<meta property="og:locale" content="fr_CH" />
+
+<link rel="icon" href="assets/images/logo/light-luxury-logo.jpg" type="image/jpeg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="assets/css/variables.css" />
+<link rel="stylesheet" href="assets/css/reset.css" />
+<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="stylesheet" href="assets/css/components.css" />
+<link rel="stylesheet" href="assets/css/responsive.css" />
+<link rel="stylesheet" href="assets/css/slider.css" />
+
+</head>
+<body>
+<a class="skip-link" href="#main-content">Aller au contenu</a>
+<div class="starfield-bg" aria-hidden="true"><canvas data-starfield data-density="130"></canvas></div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand" aria-label="Light Luxury — Accueil">
+      <img src="assets/images/logo/light-luxury-logo.jpg" alt="Logo Light Luxury" width="40" height="40" />
+      <span class="brand-text"><strong>LIGHT LUXURY</strong><span>Since 2023</span></span>
+    </a>
+
+    <nav class="main-nav" aria-label="Navigation principale">
+      <ul><li><a class="" href="index.html">Accueil</a></li>
+
+<li><a class="" href="realisations.html">Réalisations</a></li>
+<li><a class="" href="tarifs.html">Tarifs</a></li>
+<li><a class="is-active" href="boutique.html">Boutique</a></li>
+<li><a class="" href="a-propos.html">À propos</a></li>
+<li><a class="" href="contact.html">Contact</a></li></ul>
+    </nav>
+
+    <div class="nav-actions">
+      <button id="search-toggle-btn" class="icon-btn" aria-label="Rechercher" aria-controls="search-panel"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></button>
+      <a href="panier.html" class="icon-btn" aria-label="Voir le panier de demande de devis">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-badge is-empty" data-cart-count>0</span>
+      </a>
+      <a href="contact.html" class="btn btn-primary btn-sm nav-cta-desktop">Demander un devis</a>
+      <button id="burger-btn" class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div id="search-panel" class="search-panel" role="search">
+  <input id="site-search-input" type="text" placeholder="Rechercher : ciel étoilé, pavillon, volant, BMW…" aria-label="Recherche sur le site" />
+  <div id="site-search-results" class="search-results"></div>
+</div>
+
+<nav id="mobile-nav" class="mobile-nav" aria-label="Navigation mobile">
+  <a href="index.html">Accueil</a>
+<a href="realisations.html">Réalisations</a>
+<a href="tarifs.html">Tarifs</a>
+<a href="boutique.html">Boutique</a>
+<a href="a-propos.html">À propos</a>
+<a href="contact.html">Contact</a>
+  <div class="mobile-cta">
+    <a href="contact.html" class="btn btn-primary btn-block">Demander un devis</a>
+    <a href="panier.html" class="btn btn-outline btn-block">Voir mon panier</a>
+  </div>
+</nav>
+<main id="main-content">
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Panier</span>
+    <h1>Votre demande de devis</h1>
+    <p class="lead">Retrouvez ici les prestations ajoutées à votre demande. Rien n’est commandé ni payé : ce panier prépare uniquement votre message WhatsApp.</p>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="container">
+    <div id="cart-empty-state" class="empty-state" style="display:none;">
+      <p>Votre panier de demande de devis est vide.</p>
+      <a href="boutique.html" class="btn btn-primary mt-lg">Découvrir nos prestations</a>
+    </div>
+
+    <div id="cart-content" style="display:grid;grid-template-columns:1.6fr 1fr;gap:2rem;align-items:start;">
+      <div>
+        <div class="cart-list" id="cart-list"></div>
+        <button id="clear-cart-btn" class="btn btn-ghost mt-lg">Vider le panier</button>
+      </div>
+
+      <aside class="cart-summary">
+        <h3>Récapitulatif</h3>
+        <div class="config-summary-line"><span>Sous-total des prestations tarifées</span><span id="cart-priced-subtotal">CHF 0.–</span></div>
+        <div class="config-summary-line"><span>Prestations supplémentaires sur devis</span><span id="cart-quote-count">0</span></div>
+        <p class="price-note">Le total affiché est indicatif. Les prix, la compatibilité, les délais et la disponibilité sont confirmés par Light Luxury.</p>
+
+        <div class="divider"></div>
+
+        <h3>Vos coordonnées</h3>
+        <form id="quote-form" novalidate>
+          <div class="field-row">
+            <div class="field-group"><label for="firstName">Prénom *</label><input type="text" id="firstName" name="firstName" required /><span class="field-error">Champ requis</span></div>
+            <div class="field-group"><label for="lastName">Nom *</label><input type="text" id="lastName" name="lastName" required /><span class="field-error">Champ requis</span></div>
+          </div>
+          <div class="field-row">
+            <div class="field-group"><label for="phone">Téléphone *</label><input type="tel" id="phone" name="phone" required /><span class="field-error">Champ requis</span></div>
+            <div class="field-group"><label for="email">E-mail (facultatif)</label><input type="email" id="email" name="email" /></div>
+          </div>
+          <div class="field-row">
+            <div class="field-group"><label for="vBrand">Marque *</label><input type="text" id="vBrand" name="vBrand" required /><span class="field-error">Champ requis</span></div>
+            <div class="field-group"><label for="vModel">Modèle *</label><input type="text" id="vModel" name="vModel" required /><span class="field-error">Champ requis</span></div>
+          </div>
+          <div class="field-row">
+            <div class="field-group"><label for="vYear">Année *</label><input type="text" id="vYear" name="vYear" required /><span class="field-error">Champ requis</span></div>
+            <div class="field-group"><label for="vPlate">Immatriculation (facultatif)</label><input type="text" id="vPlate" name="vPlate" /></div>
+          </div>
+          <div class="field-group">
+            <label>Livraison ou installation</label>
+            <div class="field-row">
+              <label class="checkbox-field"><input type="radio" name="deliveryMode" value="Livraison à domicile" /> Livraison à domicile</label>
+              <label class="checkbox-field"><input type="radio" name="deliveryMode" value="Installation à l’atelier" /> Installation à l’atelier</label>
+            </div>
+          </div>
+          <div class="field-group">
+            <label for="finalMessage">Message</label>
+            <textarea id="finalMessage" name="finalMessage" placeholder="Précisions, disponibilités souhaitées..."></textarea>
+          </div>
+          <label class="checkbox-field" style="margin:1rem 0;">
+            <input type="checkbox" id="confirmCheckbox" name="confirmCheckbox" required />
+            J’ai compris que ma demande doit être confirmée par Light Luxury.
+          </label>
+          <span class="field-error" id="confirm-error">Merci de cocher cette case pour continuer.</span>
+          <button type="submit" class="btn btn-primary btn-block">Envoyer ma demande de devis sur WhatsApp</button>
+          <p class="form-note mt-lg">Un acompte de 50 % est demandé pour confirmer la prestation. Paiement : Cash ou TWINT.</p>
+        </form>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  function renderCart() {
+    const items = CartModule.getItems();
+    const emptyEl = document.getElementById("cart-empty-state");
+    const contentEl = document.getElementById("cart-content");
+    const listEl = document.getElementById("cart-list");
+
+    if (!items.length) {
+      emptyEl.style.display = "block";
+      contentEl.style.display = "none";
+      return;
+    }
+    emptyEl.style.display = "none";
+    contentEl.style.display = "grid";
+
+    listEl.innerHTML = items.map(item => {
+      const total = CartModule.lineTotal(item);
+      const optionsText = (item.options || []).map(o => o.name).join(", ");
+      const vehicleText = item.vehicle && (item.vehicle.brand || item.vehicle.model)
+        ? `${item.vehicle.brand || ""} ${item.vehicle.model || ""} ${item.vehicle.year || ""}`.trim() : "";
+      return `
+      <article class="cart-item">
+        <img src="${item.image || 'assets/images/logo/light-luxury-logo.jpg'}" alt="${item.serviceName}" loading="lazy" width="110" height="90" />
+        <div class="cart-item-details">
+          <h4>${item.serviceName}${item.packageName ? " — " + item.packageName : ""}</h4>
+          <div class="meta">${optionsText ? "Options : " + optionsText : ""}</div>
+          <div class="meta">${vehicleText}</div>
+        </div>
+        <div class="cart-item-actions">
+          <span class="price">${total === null ? "Sur devis" : formatCHF(total)}</span>
+          <button class="btn btn-ghost btn-sm" data-remove="${item.cartId}">Supprimer</button>
+        </div>
+      </article>`;
+    }).join("");
+
+    listEl.querySelectorAll("[data-remove]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        CartModule.removeItem(btn.dataset.remove);
+        renderCart();
+      });
+    });
+
+    const totals = CartModule.getTotals();
+    document.getElementById("cart-priced-subtotal").textContent = formatCHF(totals.pricedSubtotal);
+    document.getElementById("cart-quote-count").textContent = totals.quoteOnlyCount;
+  }
+
+  renderCart();
+  document.addEventListener("cart:updated", renderCart);
+
+  document.getElementById("clear-cart-btn").addEventListener("click", () => {
+    if (confirm("Vider entièrement le panier ?")) {
+      CartModule.clearCart();
+      renderCart();
+    }
+  });
+
+  const form = document.getElementById("quote-form");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const items = CartModule.getItems();
+    if (!items.length) return;
+
+    let valid = true;
+    form.querySelectorAll("[required]").forEach(el => {
+      const group = el.closest(".field-group");
+      if (!el.value || (el.type === "checkbox" && !el.checked)) {
+        valid = false;
+        if (group) group.classList.add("has-error");
+      } else if (group) {
+        group.classList.remove("has-error");
+      }
+    });
+    const confirmBox = document.getElementById("confirmCheckbox");
+    document.getElementById("confirm-error").style.display = confirmBox.checked ? "none" : "block";
+    if (!confirmBox.checked) valid = false;
+
+    if (!valid) return;
+
+    const fd = new FormData(form);
+    const totals = CartModule.getTotals();
+    const hasCustomLogo = items.some(i => i.hasCustomLogo);
+
+    const message = WhatsAppModule.buildQuoteMessage({
+      client: { firstName: fd.get("firstName"), lastName: fd.get("lastName"), phone: fd.get("phone"), email: fd.get("email") },
+      vehicle: { brand: fd.get("vBrand"), model: fd.get("vModel"), year: fd.get("vYear") },
+      deliveryMode: fd.get("deliveryMode") || "",
+      message: fd.get("finalMessage") || "",
+      cartItems: items,
+      totals,
+      hasCustomLogo
+    });
+
+    WhatsAppModule.sendMessage(message);
+  });
+});
+</script>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="brand" style="margin-bottom:1rem;">
+          <img src="assets/images/logo/light-luxury-logo.jpg" alt="Logo Light Luxury" width="36" height="36" />
+          <span class="brand-text"><strong>LIGHT LUXURY</strong><span>Since 2023</span></span>
+        </a>
+        <p>Personnalisation intérieure automobile sur mesure en Suisse : ciels étoilés, rénovation de pavillon, éclairage d’ambiance et volants sur mesure.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Prestations</h4>
+        <ul>
+          <li><a href="ciel-etoile.html">Ciel étoilé</a></li>
+          <li><a href="renovation-pavillon.html">Rénovation de pavillon</a></li>
+          <li><a href="volants-sur-mesure.html">Volants sur mesure</a></li>
+          <li><a href="eclairage-ambiance.html">Éclairage d’ambiance</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:" data-contact="phone">Coordonnées prochainement disponibles</a></li>
+          <li><a href="mailto:" data-contact="email">Coordonnées prochainement disponibles</a></li>
+          <li><span data-contact="address">Adresse prochainement disponible</span></li>
+          <li><a href="#" data-contact="instagram" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="contact.html">Nous contacter</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span data-current-year></span> Light Luxury. Tous droits réservés.</span>
+      <div class="payment-badges"><span>Cash</span><span>TWINT</span></div>
+      <div style="display:flex;gap:1rem;">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="#" id="whatsapp-float-btn" class="whatsapp-float" aria-label="Contacter Light Luxury sur WhatsApp"><svg viewBox="0 0 32 32"><path d="M16.001 3C9.008 3 3.335 8.671 3.335 15.665c0 2.454.687 4.83 1.99 6.897L3 29l6.6-2.267a12.6 12.6 0 0 0 6.4 1.734h.005c6.993 0 12.665-5.672 12.665-12.667C28.67 8.671 23 3 16.001 3zm0 23.02h-.004a10.5 10.5 0 0 1-5.352-1.464l-.384-.228-3.98 1.368 1.386-3.879-.25-.398a10.44 10.44 0 0 1-1.612-5.594c0-5.79 4.71-10.5 10.5-10.5 2.804 0 5.44 1.092 7.424 3.076a10.43 10.43 0 0 1 3.074 7.428c0 5.79-4.712 10.5-10.502 10.5h-.3zm5.756-7.868c-.316-.158-1.87-.923-2.16-1.028-.29-.105-.5-.158-.71.158s-.815 1.028-1 1.24c-.184.21-.368.237-.684.079-.316-.158-1.335-.492-2.542-1.568-.94-.838-1.575-1.874-1.758-2.19-.184-.316-.02-.487.138-.645.142-.14.316-.368.474-.552.158-.184.21-.316.316-.526.105-.21.053-.395-.026-.553-.079-.158-.71-1.71-.972-2.343-.256-.616-.516-.532-.71-.542-.184-.008-.395-.01-.605-.01-.21 0-.553.079-.842.395-.29.316-1.106 1.081-1.106 2.637 0 1.556 1.132 3.06 1.29 3.27.158.21 2.229 3.404 5.4 4.773.755.326 1.343.52 1.802.665.757.24 1.446.207 1.99.126.607-.091 1.87-.764 2.133-1.502.263-.738.263-1.37.184-1.502-.079-.132-.29-.21-.605-.368z"/></svg></a>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/pricing.js"></script>
+<script src="assets/js/services.js"></script>
+<script src="assets/js/products.js"></script>
+<script src="assets/js/gallery.js"></script>
+<script src="assets/js/cart.js"></script>
+<script src="assets/js/slider.js"></script>
+<script src="assets/js/whatsapp.js"></script>
+<script src="assets/js/shop.js"></script>
+<script src="assets/js/configurator.js"></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
