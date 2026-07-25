@@ -13,10 +13,10 @@ const BUSINESS_CONFIG = {
   legalName: "[RAISON SOCIALE À COMPLÉTER]",
 
   // Format international SANS le "+" ni espaces, ex: 41791234567
-  phone: "[TÉLÉPHONE À COMPLÉTER]",
+  phone: "41764966638",
   whatsapp: "", // ex: "41791234567" — laisser vide tant que non configuré
 
-  email: "[E-MAIL À COMPLÉTER]",
+  email: "contact@light-luxury.ch",
 
   address: "[ADRESSE À COMPLÉTER]",
   postalCode: "[CODE POSTAL À COMPLÉTER]",
